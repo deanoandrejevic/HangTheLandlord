@@ -19,7 +19,7 @@ body {
 }
 
 #hero-gif {
-    background: url(/assets/images/Hero\ Gif.gif) center center / cover no-repeat;
+    background: url(assets/images/Hero\ Gif.gif) center center / cover no-repeat;
   height: 100%;
   width: 100%;
   position: fixed;
