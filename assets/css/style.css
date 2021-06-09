@@ -1,33 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Staatliches&display=swap");
+
 * {
-    border: 0;
-    margin: 0;
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+    font-family: 'Open Sans' , sans-serif;
 }
 
 /* Hero image and landing page */
 
 #hero-div {
-    position: absolute;
-    width: 100%;
-    height: 100%;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
 }
 
 #hero-gif {
-    height: 100vh;
-    width: 100vw;
-    position: absolute;
+  height: 100%;
+  width: 100%;
+  position: absolute;
 }
 
 #logo-text-container {
-    position: relative;
-    margin: auto;
+  width: 500px;
+  height: 500px;
+  position: relative;
+  margin: 30vh auto
+}
+
+#logo-text-container h1 {
+  text-align: center;
+  font-family: 'Staatliches' , cursive;
+  font-size: 60px;
 }
 
 #company-logo {
-    width: 256px;
-    height: 256px;
+  background: url(/assets/images/Company\ Logo.png) no-repeat center center;
+  background-size: 256px 256px;
+  width: 256px;
+  height: 256px;
+  margin: 0 auto;
 }
 
 #hero-text {
+  color: white;
+  top: 50%;
+}
+
+#play-button {
+    padding: 20px 30px; 
+    background-color: #ffa13c;
     color: white;
-    top: 50%;
+    font-size: 20px;
+    margin-left: 200px;  
 }
