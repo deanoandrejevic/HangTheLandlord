@@ -7,7 +7,7 @@
 }
 
 body {
-    font-family: 'Open Sans' , sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 /* Hero image and landing page */
@@ -19,7 +19,7 @@ body {
 }
 
 #hero-gif {
-    background: url(assets/images/Hero\ Gif.gif) center center / cover no-repeat;
+  background: url(/assets/images/Hero\ Gif.gif) center center / cover no-repeat;
   height: 100%;
   width: 100%;
   position: fixed;
@@ -29,12 +29,12 @@ body {
   width: 500px;
   height: 500px;
   position: relative;
-  margin: 30vh auto
+  margin: 30vh auto;
 }
 
 #logo-text-container h1 {
   text-align: center;
-  font-family: 'Staatliches' , cursive;
+  font-family: "Staatliches", cursive;
   font-size: 60px;
 }
 
@@ -52,9 +52,13 @@ body {
 }
 
 #play-button {
-    padding: 20px 30px; 
-    background-color: #ffa13c;
-    color: white;
-    font-size: 20px;
-    margin-left: 200px;  
+  padding: 20px 30px;
+  background-color: #ffa13c;
+  margin-left: 200px;
+}
+
+#play-button a {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
 }
