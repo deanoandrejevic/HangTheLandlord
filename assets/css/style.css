@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Staatliches&display=swap");
 
+/* Universal styling */
+
 * {
   border: 0;
   margin: 0;
@@ -8,6 +10,10 @@
 
 body {
   font-family: "Open Sans", sans-serif;
+}
+
+h1, h2, h3, h4 {
+  font-family: "Staatliches", cursive;
 }
 
 /* Hero image and landing page */
@@ -62,3 +68,44 @@ body {
   color: white;
   font-size: 20px;
 }
+
+/* Main Game CSS */
+
+#main-game-container {
+  height: 100vh;
+  width: 100vw;
+  background-color: midnightblue;
+  position: absolute;
+}
+
+#game-name-logo {
+  height: 300px;
+  width: 100vw;
+  position: relative;
+  display: flex;
+}
+
+#game-name {
+  position: relative;
+  margin-top: 100px;
+  margin-left: 33vw;
+  color:white;
+  font-size: 80px;
+}
+
+#game-logo {
+  width:256px;
+  height: 256px;
+  margin: 25px;
+  position: relative;
+}
+
+#rules-button {
+  float: right;
+  height: 50px;
+  margin-right: 25px;
+  position: relative;
+}
+
+
+
