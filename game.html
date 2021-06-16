@@ -6,20 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hang the Landlord | A Musical Hangman</title>
     <link rel="stylesheet" href="assets/css/style.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.js"
+      integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+      crossorigin="anonymous"
+    ></script>
+    <script src="assets/js/game.js"></script>
   </head>
 
   <body>
-
-<!-- This body of HTML is for the styling of the game itself -->
+    <!-- This body of HTML is for the styling of the game itself -->
 
     <div id="main-game-container">
-      <div id="game-name-logo" >
-        <img id="game-logo" src="assets/images/Company Logo.png"/>
+      <div id="game-name-logo">
+        <img id="game-logo" src="assets/images/Company Logo.png" />
         <h1 id="game-name">HANG THE LANDLORD</h1>
         <!-- Button will display rules through a JS function and swipe in to cover entire screen -->
-        <button id="rules-button">Rules!</button>
+        <button onclick="showRules(event)" id="rules-button">Rules!</button>
       </div>
     </div>
   </body>
-
 </html>
