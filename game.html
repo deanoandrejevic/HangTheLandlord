@@ -5,6 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hang the Landlord | A Musical Hangman</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="assets/css/style.css" />
     <script
       src="https://code.jquery.com/jquery-3.6.0.js"
@@ -17,12 +23,24 @@
   <body>
     <!-- This body of HTML is for the styling of the game itself -->
 
-    <div id="main-game-container">
-      <div id="game-name-logo">
-        <img id="game-logo" src="assets/images/Company Logo.png" />
-        <h1 id="game-name">HANG THE LANDLORD</h1>
-        <!-- Button will display rules through a JS function and swipe in to cover entire screen -->
-        <button onclick="showRules(event)" id="rules-button">Rules!</button>
+    <div class="main-game-container">
+      <div class="row" id="game-name-logo">
+        <div class="col">
+          <img id="game-logo" src="assets/images/Company Logo.png" />
+        </div>
+        <div class="col">
+          <h1 id="game-name">HANG THE LANDLORD</h1>
+        </div>
+        <div class="col">
+          <!-- Button will display rules through a JS function and swipe in to cover entire screen -->
+          <button onclick="showRules(event)" id="rules-button">Rules!</button>
+        </div>
+      </div>
+      <!-- This div is called by the Onclick on line 36. the HTML content is in the JS Function called showRules -->
+      <div id="game-rules"></div>
+      <!-- The game layout is what the main will sit in, some of the code will added by JS -->
+      <div id="game-layout">
+
       </div>
     </div>
   </body>
