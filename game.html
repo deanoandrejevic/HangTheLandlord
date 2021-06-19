@@ -40,60 +40,58 @@
       <div id="game-rules">
         <h1>RULES!</h1>
         <p>
-          Hang the Landlord is based off the who wants to be millionaire quiz
-          model.
+          This game is based of the quiz show "Who Wants To Be a Millionaire?" But
+          this will purely test your music knowledge, ranging from heavy metal
+          to 60's jazz so be prepared!
         </p>
         <ul>
           <li>
-            You will have 15 seconds to answer each question, if you do not
-            answer in time you lose
+            You will have 30 seconds to answer each questions, if you do not
+            answer in time you lose!
           </li>
           <li>
-            Every 5 questions your position will be locked in at a checkpoint
+            Every 5 questions you will reach a checkpoint which if you fail will
+            be your minimum score.
+          </li>
+          <li>After each checkpoint the difficulty will increase.</li>
+          <li>
+            You will have one hint per game, so choice wisely when too use it.
           </li>
           <li>
-            If you answer incorrectly between these checkpoints your final score
-            will be based on the last checkpoint
-          </li>
-          <li>You will get one hint per round</li>
-          <li>
-            The more questions you get right the further you climb up the ladder
+            The more answers you answer correctly the further you will move up
+            the ladder.
           </li>
           <li>
-            If you answer all 20 questions correctly then you win the game!
+            You can give up at anytime will lock in your score at your current
+            position
           </li>
+          <li>Answer all 20 questions correctly and you win!</li>
         </ul>
+        <h1>Most importantly have fun!</h1>
       </div>
       <!-- The game layout is what the main will sit in, some of the code will added by JS -->
       <div id="game-layout">
-        <div id="question-box" class="row">
-
+        <div id="question-box" class="row"></div>
+        <div class="row">
+          <div id="answer-box-left" class="col"></div>
+          <div id="answer-box-right" class="col"></div>
         </div>
         <div class="row">
-            <div id="answer-box-left" class="col">
-
-            </div>
-            <div id="answer-box-right" class="col">
-
-            </div>
+          <div id="answer-box-left" class="col"></div>
+          <div id="answer-box-right" class="col"></div>
         </div>
         <div class="row">
-            <div id="answer-box-left" class="col">
-
-            </div>
-            <div id="answer-box-right" class="col">
-
-            </div>
+          <div class="col">
+            <!-- This button has an click which will display a hint as an alert -->
+            <button id="hint-button" onclick="function showHint()">Hint</button>
+          </div>
+          <div class="col">
+            <!-- This button will start the game as well as end the game -->
+            <button id="start-button" onclick="function startGame()">
+              Start Game!
+            </button>
+          </div>
         </div>
-        <div class="row">
-            <div class="col">
-
-            </div>
-            <div class="col">
-
-            </div>
-        </div>
-        
       </div>
     </div>
   </body>

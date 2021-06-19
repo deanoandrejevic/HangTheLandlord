@@ -12,3 +12,9 @@ function showRules(event) {
     gameDiv.style.display = "block";
   }
 }
+
+// function for starting the game
+
+function startGame () {
+  
+}

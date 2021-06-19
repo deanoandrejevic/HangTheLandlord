@@ -105,7 +105,7 @@ h4 {
 
 #rules-button {
   color: white;
-  background-color: orange;
+  background-color: #ff9900;
   float: right;
   padding: 20px 30px;
   margin-right: 50px;
@@ -138,11 +138,27 @@ h4 {
   padding: 0;
 }
 
+#hint-button {
+  color: white;
+  height: 50px;
+  width: 100px;
+  background-color: #ff9900;
+  margin: 20px 0 0 650px;
+}
+
+#start-button {
+  color: white;
+  height: 50px;
+  width: 100px;
+  background-color: #ff9900;
+  margin: 20px 0 0 200px;
+}
+
 /* This set of CSS is called on by Javascript */
 
 #game-rules {
-  height: 100%;
-  width: 100%;
+  margin: 0 400px;
+  height: 750px;
   text-align: center;
   color: white;
   font-size: x-large;
@@ -155,7 +171,8 @@ h4 {
   font-size: 60px;
 }
 
-#game-rules ul {
+#game-rules li {
+  list-style-type: none;
   padding: 10px;
 }
 
