@@ -37,10 +37,63 @@
         </div>
       </div>
       <!-- This div is called by the Onclick on line 36. the HTML content is in the JS Function called showRules -->
-      <div id="game-rules"></div>
+      <div id="game-rules">
+        <h1>RULES!</h1>
+        <p>
+          Hang the Landlord is based off the who wants to be millionaire quiz
+          model.
+        </p>
+        <ul>
+          <li>
+            You will have 15 seconds to answer each question, if you do not
+            answer in time you lose
+          </li>
+          <li>
+            Every 5 questions your position will be locked in at a checkpoint
+          </li>
+          <li>
+            If you answer incorrectly between these checkpoints your final score
+            will be based on the last checkpoint
+          </li>
+          <li>You will get one hint per round</li>
+          <li>
+            The more questions you get right the further you climb up the ladder
+          </li>
+          <li>
+            If you answer all 20 questions correctly then you win the game!
+          </li>
+        </ul>
+      </div>
       <!-- The game layout is what the main will sit in, some of the code will added by JS -->
       <div id="game-layout">
+        <div id="question-box" class="row">
 
+        </div>
+        <div class="row">
+            <div id="answer-box-left" class="col">
+
+            </div>
+            <div id="answer-box-right" class="col">
+
+            </div>
+        </div>
+        <div class="row">
+            <div id="answer-box-left" class="col">
+
+            </div>
+            <div id="answer-box-right" class="col">
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+
+            </div>
+            <div class="col">
+
+            </div>
+        </div>
+        
       </div>
     </div>
   </body>
