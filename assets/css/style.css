@@ -133,6 +133,11 @@ h4 {
   /* display: none; */
 }
 
+#question-text {
+  text-align: center;
+  color:white;
+}
+
 .answer-box {
   background-color: rgba(8,83,148, 0.5);
   width: 550px;
@@ -141,6 +146,13 @@ h4 {
   margin: 10px;
   border: 2px solid black;
   
+}
+
+.answer-text {
+  color: white;
+  text-align: center;
+  margin: auto;
+  text-transform: uppercase;
 }
 
 #hint-button {

@@ -17,7 +17,6 @@
       integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
       crossorigin="anonymous"
     ></script>
-    <script src="assets/js/game.js"></script>
   </head>
 
   <body>
@@ -40,9 +39,9 @@
       <div id="game-rules">
         <h1>RULES!</h1>
         <p>
-          This game is based of the quiz show "Who Wants To Be a Millionaire?" But
-          this will purely test your music knowledge, ranging from heavy metal
-          to 60's jazz so be prepared!
+          This game is based of the quiz show "Who Wants To Be a Millionaire?"
+          But this will purely test your music knowledge, ranging from heavy
+          metal to 60's jazz so be prepared!
         </p>
         <ul>
           <li>
@@ -72,17 +71,24 @@
       <!-- The game layout is what the main will sit in, some of the code will added by JS -->
       <div id="game-layout">
         <div id="question-box" class="row">
-          <div id="timer">
-
+          <div id="timer"></div>
+          <h2 id="question-text"></h2>
+        </div>
+        <div class="row">
+          <div class="answer-box" style="margin-left: 410px" class="col">
+            <p data-letter="A" class="answer-text"></p>
+          </div>
+          <div class="answer-box" class="col">
+            <p data-letter="B" class="answer-text"></p>
           </div>
         </div>
         <div class="row">
-          <div class="answer-box" style="margin-left: 410px;" class="col"></div>
-          <div class="answer-box" class="col"></div>
-        </div>
-        <div class="row">
-          <div class="answer-box" style="margin-left: 410px;" class="col"></div>
-          <div class="answer-box" class="col"></div>
+          <div class="answer-box" style="margin-left: 410px" class="col">
+            <p data-letter="C" class="answer-text"></p>
+          </div>
+          <div class="answer-box" class="col">
+            <p data-letter="D" class="answer-text"></p>
+          </div>
         </div>
         <div class="row">
           <div class="col">
@@ -99,4 +105,5 @@
       </div>
     </div>
   </body>
+  <script src="assets/js/game.js"></script>
 </html>
