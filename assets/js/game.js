@@ -76,6 +76,56 @@ var questionsLvl1 = [
     choiceD: "We Will Rock You",
     correctAnswer: "choiceC",
   },
+  {
+    question: "Ariana Grande recently tied the knot with who?",
+    choiceA: "Dalton Gomez",
+    choiceB: "Pete Davidson",
+    choiceC: "Ricky Alvarez",
+    choiceD: "Nathan Sykes",
+    correctAnswer: "choiceA",
+  },
+  {
+    question: "In 2010 Wiz Kalifa released the famous song 'Black and ....'",
+    choiceA: "Gold",
+    choiceB: "Red",
+    choiceC: "Green",
+    choiceD: "Yellow",
+    correctAnswer: "choiceD",
+  },
+  {
+    question:
+      "Finish the lyric from the Billie Ellish song Bad Guy 'I'm the bad guy, ....'",
+    choiceA: "What!",
+    choiceB: "Duh!",
+    choiceC: "Huh!",
+    choiceD: "Yes!",
+    correctAnswer: "choiceB",
+  },
+  {
+    question: "Legendary rock group, The Beatles were from which English city",
+    choiceA: "Manchester",
+    choiceB: "Liverpool",
+    choiceC: "Birmingham",
+    choiceD: "Newcastle",
+    correctAnswer: "choiceB",
+  },
+  {
+    question:
+      "Michael Jacksons, Thriller, is still the best selling album of all time, but how long did it chart at number 1 on the billboards",
+    choiceA: "50 weeks",
+    choiceB: "37 weeks",
+    choiceC: "20 weeks",
+    choiceD: "18 weeks",
+    correctAnswer: "choiceB",
+  },
+  {
+    question: 'Complete the famous Eagles song title, "Hotel ...."',
+    choiceA: "California",
+    choiceB: "Michigan",
+    choiceC: "Washington",
+    choiceD: "Florida",
+    correctAnswer: "choiceA",
+  },
 ];
 // Level 2 Questions
 var questionsLvl2 = [
@@ -87,6 +137,46 @@ var questionsLvl2 = [
     choiceC: "Lynyrd Skynyrd",
     choiceD: "Tom Petty and the Heartbreakers",
     correctAnswer: "choiceC",
+  },
+  {
+    question: "Hans Zimmer is one of the most recognizable composers of all time, but with which film did he win an oscar?",
+    choiceA: "Inception",
+    choiceB: "The Lion King",
+    choiceC: "The Dark Knight",
+    choiceD: "Gladiator",
+    correctAnswer: "choiceB",
+  },
+  {
+    question: "",
+    choiceA: "",
+    choiceB: "",
+    choiceC: "",
+    choiceD: "",
+    correctAnswer: "",
+  },
+  {
+    question: "",
+    choiceA: "",
+    choiceB: "",
+    choiceC: "",
+    choiceD: "",
+    correctAnswer: "",
+  },
+  {
+  question: '',
+  choiceA: '',
+  choiceB: '',
+  choiceC: '',
+  choiceD: '',
+  correctAnswer: '',
+  },
+  {
+  question: '',
+  choiceA: '',
+  choiceB: '',
+  choiceC: '',
+  choiceD: '',
+  correctAnswer: '',
   },
 ];
 // Level 3 Questions
@@ -127,52 +217,37 @@ function displayQuestion() {
   currentQuestionThree = avalibleQuestions[lvlThree];
   currentQuestionFour = avalibleQuestions[lvlFour];
 
-  if (userScore <= 5) {
+  if (userScore < 5) {
     questionsText.innerText = currentQuestionOne.question;
-  } else if (userScore <= 10) {
+  } else if (userScore > 5) {
     questionsText.innerText = currentQuestionTwo.question;
-  } else if (userScore <= 15) {
+  } else if (userScore > 10) {
     questionsText.innerText = currentQuestionThree.question;
-  } else if (userScore <= 20) {
+  } else if (userScore > 15) {
     questionsText.innerText = currentQuestionFour.question;
   }
 
   answerText.forEach((choice) => {
     var anwserChoice = choice.dataset["letter"];
-    if (userScore <= 5) {
+    if (userScore < 5) {
       choice.innerText = currentQuestionOne["choice" + anwserChoice];
-    } else if (userScore <= 10) {
+    } else if (userScore > 5) {
       choice.innerText = currentQuestionTwo["choice" + anwserChoice];
-    } else if (userScore <= 15) {
+    } else if (userScore > 10) {
       choice.innerText = currentQuestionThree["choice" + anwserChoice];
-    } else if (userScore <= 20) {
+    } else if (userScore > 15) {
       choice.innerText = currentQuestionFour["choice" + anwserChoice];
     }
   });
 }
-
-// function increaseDifficulty() {
-//   if (userScore <= 5) {
-//     questionsText.innerText = currentQuestionOne.question;
-//   } else if (userScore <= 10) {
-//     questionsText.innerText = currentQuestionTwo.question;
-//   } else if (userScore <= 15) {
-//     questionsText.innerText = currentQuestionThree.question;
-//   } else if (userScore <= 20) {
-//     questionsText.innerText = currentQuestionFour.question;
-//   }
-// }
 
 // Check answer and increment score
 
 // function for starting the game
 
 function startGame() {
-  (avalibleQuestions = [...questionsLvl1]),
-    [...questionsLvl2],
-    [...questionsLvl3],
-    [...questionsLvl4];
-  userScore = 1;
+  avalibleQuestions = [...questionsLvl1, ...questionsLvl2, ...questionsLvl3, ...questionsLvl4];
+  userScore = 0;
   displayQuestion();
 }
 
