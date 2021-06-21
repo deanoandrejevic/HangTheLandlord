@@ -1,3 +1,8 @@
+// retriving parts of the quiz layout to be called on later
+
+const questionsBox = document.getElementById("question-box");
+const answerBox = document.getElementsByClassName("answer-box");
+
 // function to toggle between showing rules and hiding rules
 
 function showRules(event) {
@@ -16,10 +21,12 @@ function showRules(event) {
 // Varibles to be used throughout
 
 let userScore = 0;
-let currentQuestions = {};
-let questionCounter = 0;
+let currentQuestion1 = {};
+let currentQuestion2 = {};
+let currentQuestion3 = {};
+let currentQuestion4 = {};
+let questionNumber = 0;
 let levelQuestions = [];
-
 
 // Questions for the quiz
 // Level 1 Questions
@@ -47,14 +54,73 @@ var levelOneQuestions = [
 
 // Level 2 Questions
 
+var levelTwoQuestions = [
+  {
+    question:
+      "The song Free Bird was performed by which Florida based music group",
+    a: "KC and The Sunshine Band",
+    b: "The Allman Brothers",
+    c: "Lynyrd Skynyrd",
+    d: "Tom Petty and the Heartbreakers",
+    correctAnswer: "c",
+  },
+];
+
 // Level 3 Questions
+
+var levelThreeQuestions = [
+  {
+    question:
+      "The song Land of Confusion was on the Genesis record 'Invisible Touch', but which metal group covered the song in 2005",
+    a: "Avenged Sevenfold",
+    b: "Drowning Pool",
+    c: "Slipknot",
+    d: "Disturbed",
+    correctAnswer: "d",
+  },
+];
 
 // Level 4 Questions
 
+var levelFourQuestions = [
+  {
+    question:
+      "The song 'I Don't Want To Set The World On Fire' was written in 1938, but which artists rendition of the song has become synonmus with the popular gaming franchise, Fallout",
+    a: "Vera Lynn",
+    b: "Harlan Leonard",
+    c: "Horace Hiedt",
+    d: "The Ink Spots",
+    correctAnswer: "d",
+  },
+];
+
 // Select Random Question and display
 
+function displayQuestion() {
+  const randomLevelOne = Math.floor(Math.random() * levelOneQuestions.length);
+  const randomLevelTwo = Math.floor(Math.random() * levelTwoQuestions.length);
+  const randomLevelThree = Math.floor(Math.random() * levelThreeQuestions.length);
+  const randomLevelFour = Math.floor(Math.random() * levelFourQuestions.length);
+
+  currentQuestion1 = levelOneQuestions[randomLevelOne];
+  currentQuestion2 = levelTwoQuestions[randomLevelTwo];
+  currentQuestion3 = levelThreeQuestions[randomLevelThree];
+  currentQuestion4 = levelFourQuestions[randomLevelFour];
+
+  if (userScore <= 5) {
+    questionsBox.innerHTML = currentQuestion1.question;
+  } else if (userScore <= 10) {
+    questionsBox.innerHTML = currentQuestion2.question;
+  } else if (userScore <= 15) {
+    questionsBox.innerHTML = currentQuestion3.question;
+  } else if (userScore <= 20) {
+    questionsBox.innerHTML = currentQuestion4.question;
+  }
+}
 
 // User score
+
+
 
 // function for starting the game
 
