@@ -26,7 +26,12 @@ let currentQuestionTwo = {};
 let currentQuestionThree = {};
 let currentQuestionFour = {};
 let questionNumber = 0;
-let avalibleQuestions = [];
+let avalibleQuestions1 = [];
+let avalibleQuestions2 = [];
+let avalibleQuestions3 = [];
+let avalibleQuestions4 = [];
+
+const max_questions = 20;
 
 // Questions for the quiz
 // Level 1 Questions
@@ -139,7 +144,8 @@ var questionsLvl2 = [
     correctAnswer: "choiceC",
   },
   {
-    question: "Hans Zimmer is one of the most recognizable composers of all time, but with which film did he win an oscar?",
+    question:
+      "Hans Zimmer is one of the most recognizable composers of all time, but with which film did he win an oscar?",
     choiceA: "Inception",
     choiceB: "The Lion King",
     choiceC: "The Dark Knight",
@@ -147,36 +153,37 @@ var questionsLvl2 = [
     correctAnswer: "choiceB",
   },
   {
-    question: "",
-    choiceA: "",
-    choiceB: "",
-    choiceC: "",
-    choiceD: "",
+    question: "Who is drummer for the pop-punk band blink-182?",
+    choiceA: "Chad Smith",
+    choiceB: "Mike Portney",
+    choiceC: "Dave Grohl",
+    choiceD: "Travis Barker",
+    correctAnswer: "choiceD",
+  },
+  {
+    question: "Metallica released which colored album in 1991",
+    choiceA: "Black",
+    choiceB: "Red",
+    choiceC: "Yellow",
+    choiceD: "Green",
+    correctAnswer: "choiceA",
+  },
+  {
+    question:
+      "Walk this way was a hit song from rock group Aerosmith in 1975 but which hip/hop group re-released the song with Aerosmith in 1986",
+    choiceA: "N.W.A",
+    choiceB: "A Tribe Called Quest",
+    choiceC: "Public Enemy",
+    choiceD: "Run-DMC",
     correctAnswer: "",
   },
   {
-    question: "",
-    choiceA: "",
-    choiceB: "",
-    choiceC: "",
-    choiceD: "",
-    correctAnswer: "",
-  },
-  {
-  question: '',
-  choiceA: '',
-  choiceB: '',
-  choiceC: '',
-  choiceD: '',
-  correctAnswer: '',
-  },
-  {
-  question: '',
-  choiceA: '',
-  choiceB: '',
-  choiceC: '',
-  choiceD: '',
-  correctAnswer: '',
+    question: "Who was th lead singer of the punk group, 'Sex Pistols'?",
+    choiceA: "Paul Weller",
+    choiceB: "Iggy Pop",
+    choiceC: "Johnny Rotten",
+    choiceD: "Joey Ramone",
+    correctAnswer: "choiceC",
   },
 ];
 // Level 3 Questions
@@ -189,6 +196,14 @@ var questionsLvl3 = [
     choiceC: "Slipknot",
     choiceD: "Disturbed",
     correctAnswer: "choiceD",
+  },
+  {
+    question: "What brand did Kanye West first release his Yeezy Line with?",
+    choiceA: "Adidas",
+    choiceB: "Nike",
+    choiceC: "New Balance",
+    choiceD: "Asics",
+    correctAnswer: "choiceB",
   },
 ];
 // Level 4 Questions
@@ -204,51 +219,75 @@ var questionsLvl4 = [
   },
 ];
 
+// function for starting the game
+
+function startGame() {
+  questionNumber = 0;
+  avalibleQuestions1 = [...questionsLvl1];
+  avalibleQuestions2 = [...questionsLvl2];
+  avalibleQuestions3 = [...questionsLvl3];
+  avalibleQuestions4 = [...questionsLvl4];
+  userScore = 0;
+  displayQuestion();
+  console.log(avalibleQuestions1);
+  console.log(avalibleQuestions2);
+  console.log(avalibleQuestions3);
+  console.log(avalibleQuestions4);
+}
+
 // Select Random Question and display
 
 function displayQuestion() {
+
+  // if (userScore === 20) {
+    
+  // }
+
+  questionNumber++;
+
   const lvlOne = Math.floor(Math.random() * questionsLvl1.length);
   const lvlTwo = Math.floor(Math.random() * questionsLvl2.length);
   const lvlThree = Math.floor(Math.random() * questionsLvl3.length);
   const lvlFour = Math.floor(Math.random() * questionsLvl4.length);
 
-  currentQuestionOne = avalibleQuestions[lvlOne];
-  currentQuestionTwo = avalibleQuestions[lvlTwo];
-  currentQuestionThree = avalibleQuestions[lvlThree];
-  currentQuestionFour = avalibleQuestions[lvlFour];
+  currentQuestionOne = avalibleQuestions1[lvlOne];
+  currentQuestionTwo = avalibleQuestions2[lvlTwo];
+  currentQuestionThree = avalibleQuestions3[lvlThree];
+  currentQuestionFour = avalibleQuestions4[lvlFour];
 
   if (userScore < 5) {
     questionsText.innerText = currentQuestionOne.question;
-  } else if (userScore > 5) {
+  } else if (userScore < 10) {
     questionsText.innerText = currentQuestionTwo.question;
-  } else if (userScore > 10) {
+  } else if (userScore < 15) {
     questionsText.innerText = currentQuestionThree.question;
-  } else if (userScore > 15) {
+  } else if (userScore < 20) {
     questionsText.innerText = currentQuestionFour.question;
   }
 
   answerText.forEach((choice) => {
-    var anwserChoice = choice.dataset["letter"];
+    const anwserChoice = choice.dataset["letter"];
     if (userScore < 5) {
       choice.innerText = currentQuestionOne["choice" + anwserChoice];
-    } else if (userScore > 5) {
+    } else if (userScore < 10) {
       choice.innerText = currentQuestionTwo["choice" + anwserChoice];
-    } else if (userScore > 10) {
+    } else if (userScore < 15) {
       choice.innerText = currentQuestionThree["choice" + anwserChoice];
-    } else if (userScore > 15) {
+    } else if (userScore < 20) {
       choice.innerText = currentQuestionFour["choice" + anwserChoice];
     }
   });
+
+  avalibleQuestions1.splice(lvlOne, 1);
+  avalibleQuestions2.splice(lvlTwo, 1);
+  avalibleQuestions3.splice(lvlThree, 1);
+  avalibleQuestions4.splice(lvlFour, 1);
 }
 
 // Check answer and increment score
 
-// function for starting the game
-
-function startGame() {
-  avalibleQuestions = [...questionsLvl1, ...questionsLvl2, ...questionsLvl3, ...questionsLvl4];
-  userScore = 0;
-  displayQuestion();
+function checkAnswer() {
+  
 }
 
 startGame();
