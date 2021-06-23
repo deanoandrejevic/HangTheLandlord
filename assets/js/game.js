@@ -222,7 +222,7 @@ function startGame() {
   avalibleQuestions2 = [...questionsLvl2];
   avalibleQuestions3 = [...questionsLvl3];
   avalibleQuestions4 = [...questionsLvl4];
-  userScore = 0;
+  userScore = 6;
   displayQuestion();
 }
 
@@ -281,19 +281,17 @@ answerText.forEach((choice) => {
     const selectedChoice = e.target;
     const selectedAnswer = selectedChoice.dataset["letter"];
 
-    const classToApply =
-      selectedAnswer == currentQuestionOne.correctAnswer
-        ? "correct-answer"
-        : "incorrect-answer";
-    selectedAnswer == currentQuestionTwo.correctAnswer
-      ? "correct-answer"
-      : "incorrect-answer";
-    selectedAnswer == currentQuestionThree.correctAnswer
-      ? "correct-answer"
-      : "incorrect-answer";
-    selectedAnswer == currentQuestionFour.correctAnswer
-      ? "correct-answer"
-      : "incorrect-answer";
+    let classToApply = "incorrect-answer";
+
+    if (selectedAnswer == currentQuestionOne.correctAnswer) {
+      classToApply = "correct-answer"
+    } else if (selectedAnswer == currentQuestionTwo.correctAnswer) {
+      classToApply ="correct-answer" 
+    } else if (selectedAnswer == currentQuestionThree.correctAnswer) { 
+      classToApply ="correct-answer"
+    } else if (selectedAnswer == currentQuestionFour.correctAnswer) {
+      classToApply = "correct-answer"
+    }
 
     console.log(classToApply);
 
