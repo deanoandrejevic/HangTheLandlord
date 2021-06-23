@@ -21,21 +21,15 @@ function showRules(event) {
 // Varibles to be used throughout
 
 let userScore = 0;
-let currentQuestionOne = {};
-let currentQuestionTwo = {};
-let currentQuestionThree = {};
-let currentQuestionFour = {};
+let currentQuestion = {};
 let questionNumber = 0;
-let avalibleQuestions1 = [];
-let avalibleQuestions2 = [];
-let avalibleQuestions3 = [];
-let avalibleQuestions4 = [];
+let avalibleQuestions = [];
+let acceptingAnswers = false;
 
 const max_questions = 20;
 
 // Questions for the quiz
-// Level 1 Questions
-var questionsLvl1 = [
+var questions = [
   {
     question:
       "What former disney channel star recently released the song Good 4 U?",
@@ -43,7 +37,7 @@ var questionsLvl1 = [
     choiceB: "Selena Gomez",
     choiceC: "Demi Lovato",
     choiceD: "Vanessa Hudgens",
-    correctAnswer: "choiceA",
+    correctAnswer: "A",
   },
   {
     question:
@@ -52,7 +46,7 @@ var questionsLvl1 = [
     choiceB: "Florence Welsh",
     choiceC: "Ed Sheeran",
     choiceD: "Elly Jackson",
-    correctAnswer: "choiceC",
+    correctAnswer: "C",
   },
   {
     question:
@@ -61,7 +55,7 @@ var questionsLvl1 = [
     choiceB: "Future Nostalgia",
     choiceC: "Present Nostalgia",
     choiceD: "Nostalgic Past",
-    correctAnswer: "choiceB",
+    correctAnswer: "B",
   },
   {
     question:
@@ -70,7 +64,7 @@ var questionsLvl1 = [
     choiceB: "Juice",
     choiceC: "Honey",
     choiceD: "Sugar",
-    correctAnswer: "choiceD",
+    correctAnswer: "D",
   },
   {
     question:
@@ -79,7 +73,7 @@ var questionsLvl1 = [
     choiceB: "The Show Must Go On",
     choiceC: "Boheimem Rhapsody",
     choiceD: "We Will Rock You",
-    correctAnswer: "choiceC",
+    correctAnswer: "C",
   },
   {
     question: "Ariana Grande recently tied the knot with who?",
@@ -87,7 +81,7 @@ var questionsLvl1 = [
     choiceB: "Pete Davidson",
     choiceC: "Ricky Alvarez",
     choiceD: "Nathan Sykes",
-    correctAnswer: "choiceA",
+    correctAnswer: "A",
   },
   {
     question: "In 2010 Wiz Kalifa released the famous song 'Black and ....'",
@@ -95,7 +89,7 @@ var questionsLvl1 = [
     choiceB: "Red",
     choiceC: "Green",
     choiceD: "Yellow",
-    correctAnswer: "choiceD",
+    correctAnswer: "D",
   },
   {
     question:
@@ -104,7 +98,7 @@ var questionsLvl1 = [
     choiceB: "Duh!",
     choiceC: "Huh!",
     choiceD: "Yes!",
-    correctAnswer: "choiceB",
+    correctAnswer: "B",
   },
   {
     question: "Legendary rock group, The Beatles were from which English city",
@@ -112,7 +106,7 @@ var questionsLvl1 = [
     choiceB: "Liverpool",
     choiceC: "Birmingham",
     choiceD: "Newcastle",
-    correctAnswer: "choiceB",
+    correctAnswer: "B",
   },
   {
     question:
@@ -121,7 +115,7 @@ var questionsLvl1 = [
     choiceB: "37 weeks",
     choiceC: "20 weeks",
     choiceD: "18 weeks",
-    correctAnswer: "choiceB",
+    correctAnswer: "B",
   },
   {
     question: 'Complete the famous Eagles song title, "Hotel ...."',
@@ -129,11 +123,8 @@ var questionsLvl1 = [
     choiceB: "Michigan",
     choiceC: "Washington",
     choiceD: "Florida",
-    correctAnswer: "choiceA",
+    correctAnswer: "A",
   },
-];
-// Level 2 Questions
-var questionsLvl2 = [
   {
     question:
       "The song Free Bird was performed by which Florida based music group",
@@ -141,7 +132,7 @@ var questionsLvl2 = [
     choiceB: "The Allman Brothers",
     choiceC: "Lynyrd Skynyrd",
     choiceD: "Tom Petty and the Heartbreakers",
-    correctAnswer: "choiceC",
+    correctAnswer: "C",
   },
   {
     question:
@@ -150,7 +141,7 @@ var questionsLvl2 = [
     choiceB: "The Lion King",
     choiceC: "The Dark Knight",
     choiceD: "Gladiator",
-    correctAnswer: "choiceB",
+    correctAnswer: "B",
   },
   {
     question: "Who is drummer for the pop-punk band blink-182?",
@@ -158,7 +149,7 @@ var questionsLvl2 = [
     choiceB: "Mike Portney",
     choiceC: "Dave Grohl",
     choiceD: "Travis Barker",
-    correctAnswer: "choiceD",
+    correctAnswer: "D",
   },
   {
     question: "Metallica released which colored album in 1991",
@@ -166,7 +157,7 @@ var questionsLvl2 = [
     choiceB: "Red",
     choiceC: "Yellow",
     choiceD: "Green",
-    correctAnswer: "choiceA",
+    correctAnswer: "A",
   },
   {
     question:
@@ -175,7 +166,7 @@ var questionsLvl2 = [
     choiceB: "A Tribe Called Quest",
     choiceC: "Public Enemy",
     choiceD: "Run-DMC",
-    correctAnswer: "",
+    correctAnswer: "D",
   },
   {
     question: "Who was th lead singer of the punk group, 'Sex Pistols'?",
@@ -183,11 +174,8 @@ var questionsLvl2 = [
     choiceB: "Iggy Pop",
     choiceC: "Johnny Rotten",
     choiceD: "Joey Ramone",
-    correctAnswer: "choiceC",
+    correctAnswer: "C",
   },
-];
-// Level 3 Questions
-var questionsLvl3 = [
   {
     question:
       "The song Land of Confusion was on the Genesis record 'Invisible Touch', but which metal group covered the song in 2005",
@@ -195,7 +183,7 @@ var questionsLvl3 = [
     choiceB: "Drowning Pool",
     choiceC: "Slipknot",
     choiceD: "Disturbed",
-    correctAnswer: "choiceD",
+    correctAnswer: "D",
   },
   {
     question: "What brand did Kanye West first release his Yeezy Line with?",
@@ -203,11 +191,8 @@ var questionsLvl3 = [
     choiceB: "Nike",
     choiceC: "New Balance",
     choiceD: "Asics",
-    correctAnswer: "choiceB",
+    correctAnswer: "B",
   },
-];
-// Level 4 Questions
-var questionsLvl4 = [
   {
     question:
       "The song 'I Don't Want To Set The World On Fire' was written in 1938, but which artists rendition of the song has become synonmus with the popular gaming franchise, Fallout",
@@ -215,7 +200,7 @@ var questionsLvl4 = [
     choiceB: "Harlan Leonard",
     choiceC: "Horace Hiedt",
     choiceD: "The Ink Spots",
-    correctAnswer: "choiceD",
+    correctAnswer: "D",
   },
 ];
 
@@ -223,71 +208,55 @@ var questionsLvl4 = [
 
 function startGame() {
   questionNumber = 0;
-  avalibleQuestions1 = [...questionsLvl1];
-  avalibleQuestions2 = [...questionsLvl2];
-  avalibleQuestions3 = [...questionsLvl3];
-  avalibleQuestions4 = [...questionsLvl4];
+  avalibleQuestions = [...questions];
   userScore = 0;
   displayQuestion();
-  console.log(avalibleQuestions1);
-  console.log(avalibleQuestions2);
-  console.log(avalibleQuestions3);
-  console.log(avalibleQuestions4);
 }
+
+// check answers
 
 // Select Random Question and display
 
 function displayQuestion() {
-
-  // if (userScore === 20) {
-    
-  // }
-
   questionNumber++;
 
-  const lvlOne = Math.floor(Math.random() * questionsLvl1.length);
-  const lvlTwo = Math.floor(Math.random() * questionsLvl2.length);
-  const lvlThree = Math.floor(Math.random() * questionsLvl3.length);
-  const lvlFour = Math.floor(Math.random() * questionsLvl4.length);
+  const random = Math.floor(Math.random() * questions.length);
 
-  currentQuestionOne = avalibleQuestions1[lvlOne];
-  currentQuestionTwo = avalibleQuestions2[lvlTwo];
-  currentQuestionThree = avalibleQuestions3[lvlThree];
-  currentQuestionFour = avalibleQuestions4[lvlFour];
+  currentQuestion = avalibleQuestions[random];
 
-  if (userScore < 5) {
-    questionsText.innerText = currentQuestionOne.question;
-  } else if (userScore < 10) {
-    questionsText.innerText = currentQuestionTwo.question;
-  } else if (userScore < 15) {
-    questionsText.innerText = currentQuestionThree.question;
-  } else if (userScore < 20) {
-    questionsText.innerText = currentQuestionFour.question;
-  }
+  questionsText.innerText = currentQuestion.question;
 
   answerText.forEach((choice) => {
     const anwserChoice = choice.dataset["letter"];
-    if (userScore < 5) {
-      choice.innerText = currentQuestionOne["choice" + anwserChoice];
-    } else if (userScore < 10) {
-      choice.innerText = currentQuestionTwo["choice" + anwserChoice];
-    } else if (userScore < 15) {
-      choice.innerText = currentQuestionThree["choice" + anwserChoice];
-    } else if (userScore < 20) {
-      choice.innerText = currentQuestionFour["choice" + anwserChoice];
-    }
+    choice.innerText = currentQuestion["choice" + anwserChoice];
   });
 
-  avalibleQuestions1.splice(lvlOne, 1);
-  avalibleQuestions2.splice(lvlTwo, 1);
-  avalibleQuestions3.splice(lvlThree, 1);
-  avalibleQuestions4.splice(lvlFour, 1);
+  avalibleQuestions.splice(random, 1);
+  acceptingAnswers = true;
 }
 
-// Check answer and increment score
+answerText.forEach((choice) => {
+  choice.addEventListener("click", (e) => {
+    if (!acceptingAnswers) return;
 
-function checkAnswer() {
-  
-}
+    acceptingAnswers = false;
+    const selectedChoice = e.target;
+    const selectedAnswer = selectedChoice.dataset["letter"];
+
+    const classToApply =
+      selectedAnswer == currentQuestion.correctAnswer
+        ? "correct-answer"
+        : "incorrect-answer";
+
+    console.log(classToApply);
+
+    selectedChoice.parentElement.classList.add(classToApply);
+
+    setTimeout(() => {
+      selectedChoice.parentElement.classList.remove(classToApply);
+      displayQuestion();
+    }, 1000);
+  });
+});
 
 startGame();

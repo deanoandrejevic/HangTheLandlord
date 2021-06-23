@@ -118,7 +118,7 @@ h4 {
 #question-box {
   height: 250px;
   border: 2px solid black;
-  background-color: rgba(8,83,148, 0.5);
+  background-color: rgba(8, 83, 148, 0.5);
   margin: 20px 400px;
 }
 
@@ -135,17 +135,16 @@ h4 {
 
 #question-text {
   text-align: center;
-  color:white;
+  color: white;
 }
 
 .answer-box {
-  background-color: rgba(8,83,148, 0.5);
+  background-color: rgba(8, 83, 148, 0.5);
   width: 550px;
   height: 100px;
   display: grid;
   margin: 10px;
   border: 2px solid black;
-  
 }
 
 .answer-text {
@@ -153,6 +152,18 @@ h4 {
   text-align: center;
   margin: auto;
   text-transform: uppercase;
+}
+
+.pending-answer {
+  background-color: #ff9900;
+}
+
+.correct-answer {
+  background-color: green;
+}
+
+.incorrect-answer {
+  background-color: red;
 }
 
 #hint-button {
@@ -179,7 +190,7 @@ h4 {
   text-align: center;
   color: white;
   font-size: x-large;
-  background-color: rgba(0,0,0,0.2);
+  background-color: rgba(0, 0, 0, 0.2);
   display: none;
 }
 
@@ -192,5 +203,3 @@ h4 {
   list-style-type: none;
   padding: 10px;
 }
-
-
