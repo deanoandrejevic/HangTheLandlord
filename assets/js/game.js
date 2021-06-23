@@ -23,13 +23,16 @@ function showRules(event) {
 let userScore = 0;
 let currentQuestion = {};
 let questionNumber = 0;
-let avalibleQuestions = [];
+let avalibleQuestions1 = [];
+let avalibleQuestions2 = [];
+let avalibleQuestions3 = [];
+let avalibleQuestions4 = [];
 let acceptingAnswers = false;
 
 const max_questions = 20;
 
 // Questions for the quiz
-var questions = [
+var questionsLvl1 = [
   {
     question:
       "What former disney channel star recently released the song Good 4 U?",
@@ -125,6 +128,8 @@ var questions = [
     choiceD: "Florida",
     correctAnswer: "A",
   },
+];
+var questionsLvl2 = [
   {
     question:
       "The song Free Bird was performed by which Florida based music group",
@@ -176,6 +181,9 @@ var questions = [
     choiceD: "Joey Ramone",
     correctAnswer: "C",
   },
+];
+
+var questionsLvl3 = [
   {
     question:
       "The song Land of Confusion was on the Genesis record 'Invisible Touch', but which metal group covered the song in 2005",
@@ -193,6 +201,8 @@ var questions = [
     choiceD: "Asics",
     correctAnswer: "B",
   },
+];
+var questionsLvl4 = [
   {
     question:
       "The song 'I Don't Want To Set The World On Fire' was written in 1938, but which artists rendition of the song has become synonmus with the popular gaming franchise, Fallout",
@@ -208,7 +218,10 @@ var questions = [
 
 function startGame() {
   questionNumber = 0;
-  avalibleQuestions = [...questions];
+  avalibleQuestions1 = [...questionsLvl1];
+  avalibleQuestions2 = [...questionsLvl2];
+  avalibleQuestions3 = [...questionsLvl3];
+  avalibleQuestions4 = [...questionsLvl4];
   userScore = 0;
   displayQuestion();
 }
@@ -220,18 +233,43 @@ function startGame() {
 function displayQuestion() {
   questionNumber++;
 
-  const random = Math.floor(Math.random() * questions.length);
+  const lvlOne = Math.floor(Math.random() * questionsLvl1.length);
+  const lvlTwo = Math.floor(Math.random() * questionsLvl2.length);
+  const lvlThree = Math.floor(Math.random() * questionsLvl3.length);
+  const lvlFour = Math.floor(Math.random() * questionsLvl4.length);
 
-  currentQuestion = avalibleQuestions[random];
+  currentQuestionOne = avalibleQuestions1[lvlOne];
+  currentQuestionTwo = avalibleQuestions2[lvlTwo];
+  currentQuestionThree = avalibleQuestions3[lvlThree];
+  currentQuestionFour = avalibleQuestions4[lvlFour];
 
-  questionsText.innerText = currentQuestion.question;
+  if (userScore < 5) {
+    questionsText.innerText = currentQuestionOne.question;
+  } else if (userScore < 10) {
+    questionsText.innerText = currentQuestionTwo.question;
+  } else if (userScore < 15) {
+    questionsText.innerText = currentQuestionThree.question;
+  } else if (userScore < 20) {
+    questionsText.innerText = currentQuestionFour.question;
+  }
 
   answerText.forEach((choice) => {
     const anwserChoice = choice.dataset["letter"];
-    choice.innerText = currentQuestion["choice" + anwserChoice];
+    if (userScore < 5) {
+      choice.innerText = currentQuestionOne["choice" + anwserChoice];
+    } else if (userScore < 10) {
+      choice.innerText = currentQuestionTwo["choice" + anwserChoice];
+    } else if (userScore < 15) {
+      choice.innerText = currentQuestionThree["choice" + anwserChoice];
+    } else if (userScore < 20) {
+      choice.innerText = currentQuestionFour["choice" + anwserChoice];
+    }
   });
 
-  avalibleQuestions.splice(random, 1);
+  avalibleQuestions1.splice(lvlOne, 1);
+  avalibleQuestions2.splice(lvlTwo, 1);
+  avalibleQuestions3.splice(lvlThree, 1);
+  avalibleQuestions4.splice(lvlFour, 1);
   acceptingAnswers = true;
 }
 
@@ -244,9 +282,18 @@ answerText.forEach((choice) => {
     const selectedAnswer = selectedChoice.dataset["letter"];
 
     const classToApply =
-      selectedAnswer == currentQuestion.correctAnswer
+      selectedAnswer == currentQuestionOne.correctAnswer
         ? "correct-answer"
         : "incorrect-answer";
+    selectedAnswer == currentQuestionTwo.correctAnswer
+      ? "correct-answer"
+      : "incorrect-answer";
+    selectedAnswer == currentQuestionThree.correctAnswer
+      ? "correct-answer"
+      : "incorrect-answer";
+    selectedAnswer == currentQuestionFour.correctAnswer
+      ? "correct-answer"
+      : "incorrect-answer";
 
     console.log(classToApply);
 
