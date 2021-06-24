@@ -27,6 +27,58 @@ The user is incredibly simple and intutive, everything is clearly labeled and it
 
  The structure for the project started out quite massive, but i quickly realised that if i wanted to make something that was competant and stable, I would need to scale back my efforts. I had intitaly planned for the project to be a hang man based game, hence the name, but i shifted gears and wanted to go for a more tradional quiz with a who wants to be a millionaire twist to it. The user has to try and answer 20 questions with out getting any wrong. You get 20 right and you win it is a simple as that but it is harder than meets the eye. The questions are completely randomised and any can come up from the very hard ones to the easy ones at any point. As I was saying before the structure is very easy and simple and should be instantly familer to anyone who has taken part in any quiz or watched one on telly. It is a simple and clean layout with bold colours but not hard on the eyes either.
 
- 
+ # Wireframes
 
 
+ # Features
+
+## implemented
+ 1. Greeted with a splash screen of a concert image.
+ 2. Play button to take you to the main page itself.
+ 3. Once you are in the page you will see in the top right there is a rules button with completely take over the page, and then to get rid of it just click the rules button again.
+ 4. Something that you don't see unless you either win or fail is your score is incrimenting when you get an answer correct.
+ 5. What you do see however is the a visual feedback of whether an answer was correct or not, the answer box will either go green or red depending on a right or wrong answer.
+ 6. Finally there is a message that will appear at the end of the game to either tell you, you are amazing or you have failed!
+
+## features to implement
+
+1. I would like to add a timer to the quiz, I was close to getting one but I couldn't get it working quite correctly.
+2. I would also like to add an api from the opentrivia api so i don't have to write out all the questions make the code cluttered
+3. I would like to add a difficulty system, so the more answers you get right the harder it gets. I did try to add this in but the code became very cluttered and unwieldly, I decided ultimatley to leave it for now and add it later.
+4. Finally I would like to add in the future a hint system like in the real who wants to be a millionaire but with this one you only get one hint for the whole game. The was realistically never going to be attempted in this project due to the fact I already had to write out all my questions my self, it just felt uneccassery for the time being.
+
+# Technologies Used
+
+### Languages:
+-[HTML](https://en.wikipedia.org/wiki/HTML5)
+-[CCS](https://en.wikipedia.org/wiki/CSS)
+-[Javascript](https://en.wikipedia.org/wiki/JavaScript)
+
+### Libaries:
+-[Google Fonts](https://fonts.google.com/) Staatliches and Open Sans fonts used.
+-[Balsamiq](https://balsamiq.com/) Balsamiq was used to make my wireframes and general design of my website.
+
+### Version Control:
+-[GitHub](https://github.com/) GitHub was used for storage of code and deployment of page via GitHub Pages.
+-[GitPod](https://www.gitpod.io/) GitPod was used as the primary editor and also to push and commit my code.
+
+### Other:
+-[Google Dev Tools](https://developer.chrome.com/docs/devtools/) Google Chrome Dev Tools was a huge help in discovering bugs and figuring out the solution before actually
+commiting it to my own code.
+-[Code Institute](https://codeinstitute.net/) The Code Institute is where all my current coding knowledge has come from.#
+-
+
+
+
+
+# Deployment
+
+-I started a new repository with a new template by going on to your profile and clicking the green "new" button. 
+I Named mine StringUpMusic.
+-Once the Repository is created I clicked on the GitPod button to load the workspace.
+-Once in I created a README.md file and index.html file. assets, images and css folders.
+-When I have finished doing that I added those files and folders to the staging area by doing the
+git add * command. Then do the "intital commit" and push them with git push.
+-I then went back to the GitHub Repo and went to settings, scrolled down to GitHub pages and selected
+master from the source dropdown.
+-Then my page was created, with a GitHub.io url
