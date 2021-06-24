@@ -76,14 +76,14 @@ h4 {
 
 .main-game-container {
   height: 2000px;
-  width: 100vw;
+  width: 100%;
   background-color: #20124d;
   position: absolute;
 }
 
 #game-name-logo {
   height: 250px;
-  width: 100vw;
+  width: 100%;
   position: relative;
   display: flex;
 }
@@ -115,35 +115,27 @@ h4 {
 
 /* Game layout, some of these lines will be called by JS which I will label */
 
+
+
 #question-box {
+  width: 75%;
   height: 250px;
   border: 2px solid black;
   background-color: rgb(8, 83, 148);
-  margin: 20px 400px;
+  margin: 20px auto;
 }
-
-#timer {
-  height: 4px;
-  width: 1%;
-  background-color: #ff9900;
-  z-index: 1;
-  left: 0;
-  bottom: 0;
-  position: relative;
-  /* display: none; */
-}
-
 #question-text {
   text-align: center;
   color: white;
+  margin: auto
 }
 
 .answer-box {
   background-color: rgb(8, 83, 148);
-  width: 550px;
+  width: 25%px;
   height: 100px;
   display: grid;
-  margin: 10px;
+  margin: 10px auto;
   border: 2px solid black;
 }
 
@@ -154,10 +146,6 @@ h4 {
   text-transform: uppercase;
 }
 
-.pending-answer {
-  background-color: #ff9900;
-}
-
 .correct-answer {
   background-color: green;
 }
@@ -166,20 +154,16 @@ h4 {
   background-color: red;
 }
 
-#hint-button {
-  color: white;
-  height: 50px;
-  width: 100px;
-  background-color: #ff9900;
-  margin: 20px 0 0 650px;
-}
-
 #start-button {
   color: white;
   height: 50px;
   width: 100px;
   background-color: #ff9900;
-  margin: 20px 0 0 200px;
+  margin: auto;
+}
+
+.row {
+  width: 100%
 }
 
 /* This set of CSS is called on by Javascript */
@@ -202,4 +186,27 @@ h4 {
 #game-rules li {
   list-style-type: none;
   padding: 10px;
+}
+
+
+@media screen and (max-width: 991px) {
+ #question-box {
+   width: 90%;
+ }
+
+ #game-name-logo {
+   height: 600px;
+ }
+
+ .answer-box {
+   width: 90%;
+ }
+
+ #game-name { 
+   margin: 0 auto;
+ }
+
+ #game-logo {
+   margin: 0 auto;
+ }
 }

@@ -23,14 +23,14 @@
     <!-- This body of HTML is for the styling of the game itself -->
 
     <div class="main-game-container">
-      <div class="row" id="game-name-logo">
-        <div class="col">
+      <div class="row g-0" id="game-name-logo">
+        <div class="col col-lg-4 col-sm-12">
           <img id="game-logo" src="assets/images/Company Logo.png" />
         </div>
-        <div class="col">
+        <div class="col col-lg-4 col-sm-12">
           <h1 id="game-name">HANG THE LANDLORD</h1>
         </div>
-        <div class="col">
+        <div class="col-lg-4 col-sm-12">
           <!-- Button will display rules through a JS function and swipe in to cover entire screen -->
           <button id="rules-button">Rules!</button>
         </div>
@@ -70,26 +70,25 @@
       <!-- The game layout is what the main will sit in, some of the code will added by JS -->
       <div id="game-layout">
         <div id="question-box" class="row">
-          <div id="timer"></div>
-          <h2 id="question-text"></h2>
+          <h1 id="question-text"></h1>
         </div>
-        <div class="row">
-          <div style="margin-left: 410px" class="col col-sm-12 answer-box">
+        <div class="row g-0">
+          <div  class="col col-lg-4 col-sm-12 answer-box">
             <p data-number=1 class="answer-text"></p>
           </div>
-          <div  class="col col-sm-12 answer-box">
+          <div  class="col col-lg-4 col-sm-12 answer-box">
             <p data-number=2 class="answer-text"></p>
           </div>
         </div>
-        <div class="row">
-          <div  style="margin-left: 410px" class="col col-sm-12 answer-box">
+        <div class="g-0 row">
+          <div   class="col col-lg-4 col-sm-12 answer-box">
             <p data-number=3 class="answer-text"></p>
           </div>
-          <div  class="col col-sm-12 answer-box">
+          <div  class=" col col-lg-4 col-sm-12 answer-box">
             <p data-number=4 class="answer-text"></p>
           </div>
         </div>
-        <div class="row">
+        <div class="g-0 row">
           <div class="col">
             <!-- This button will start the game as well as end the game -->
             <button id="start-button">

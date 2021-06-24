@@ -233,7 +233,7 @@ document.getElementById("start-button").addEventListener("click", function start
   displayQuestion();
 });
 
-// check answers
+
 
 // Select Random Question and display
 
@@ -260,6 +260,8 @@ if (questionNumber >= maxQuestions){
   avalibleQuestions.splice(randomQuestion, 1)
   acceptingAnswers = true;
 };
+
+// check answers with an assigned data set 
 
 answerText.forEach((choice) => {
   choice.addEventListener("click", (e) => {
@@ -299,5 +301,3 @@ if (userScore == 20){
   questionsText.innerHTML = `Awwww unlucky, you lost! Your score is ${userScore}`;
 }
 }
-
-startGame();
