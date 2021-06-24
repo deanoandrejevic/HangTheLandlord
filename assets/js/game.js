@@ -33,7 +33,7 @@ let questions = [
   {
     question:
       "What former disney channel star recently released the song Good 4 U?",
-    choice1: "Olivia Rodiguiz",
+    choice1: "Olivia Rodrigo",
     choice2: "Selena Gomez",
     choice3: "Demi Lovato",
     choice4: "Vanessa Hudgens",
@@ -206,7 +206,7 @@ let questions = [
     correctAnswer: 4,
   },
   {
-    question: "Who open the charity gig, Live Aid?",
+    question: "Who opened Live Aid?",
     choice1: "David Bowie",
     choice2: "Status Quo",
     choice3: "Phil Collins",
@@ -240,7 +240,7 @@ document.getElementById("start-button").addEventListener("click", function start
 function displayQuestion() {
 
 if (questionNumber >= maxQuestions){
-  endGame()
+  return endGame()
 }
 
   questionNumber++;
@@ -295,9 +295,11 @@ answerText.forEach((choice) => {
 });
 
 function endGame() {
+
 if (userScore == 20){
   questionsText.innerHTML = `Wow! You really are a music god! Well Done`
 } else {
   questionsText.innerHTML = `Awwww unlucky, you lost! Your score is ${userScore}`;
+  
 }
 }

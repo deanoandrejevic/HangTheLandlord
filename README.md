@@ -105,7 +105,10 @@ commiting it to my own code.
 
 No reported issues on any of these devices
 
-
+## Bugs
+- The only known bug is that after losing the game and tapping start game the color red would stay as the background color instead of disapearing.
+*UPDATE FIXED*
+- I have fixed the bug by adding a timeout on line 287 of JS file, everything works fine now.
 
 # Deployment
 
@@ -118,3 +121,8 @@ git add * command. Then do the "intital commit" and push them with git push.
 -I then went back to the GitHub Repo and went to settings, scrolled down to GitHub pages and selected
 master from the source dropdown.
 -Then my page was created, with a GitHub.io url
+
+# Credits
+James Q Quick from youtube, his set of youtube videos helped me a bunch when trying to figure out how to the quiz itself. Specifically [This](https://www.youtube.com/watch?v=zZdQGs62cR8&list=RDCMUC-T8W79DN6PBnzomelvqJYw&index=3&ab_channel=JamesQQuick) Video
+
+[Hero-Image](https://unsplash.com/photos/xOwbxDSaoXI)
