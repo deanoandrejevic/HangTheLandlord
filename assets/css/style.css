@@ -75,7 +75,7 @@ h4 {
 /* Main Game CSS */
 
 .main-game-container {
-  height: 2000px;
+  height: 100vh;
   width: 100%;
   background-color: #20124d;
   position: absolute;
@@ -132,12 +132,13 @@ h4 {
 
 .answer-box {
   background-color: rgb(8, 83, 148);
-  width: 25%px;
+  width: 25%;
   height: 100px;
   display: grid;
   margin: 10px auto;
   border: 2px solid black;
 }
+
 
 .answer-text {
   color: white;
@@ -159,7 +160,7 @@ h4 {
   height: 50px;
   width: 100px;
   background-color: #ff9900;
-  margin: auto;
+  margin-left: 48%;
 }
 
 .row {
@@ -203,10 +204,17 @@ h4 {
  }
 
  #game-name { 
-   margin: 0 auto;
+   margin: auto;
  }
 
  #game-logo {
-   margin: 0 auto;
+   margin:auto;
  }
+
+ #rules-button {
+   margin-right: 44%;
+ }
+#main-game-container {
+  height: 1500px;
+}
 }

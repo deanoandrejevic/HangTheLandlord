@@ -14,7 +14,7 @@ The user is incredibly simple and intutive, everything is clearly labeled and it
  3. I want feedback from the quiz itself, so i know weather i have a question right or wrong!
 
 ## Regular User
- 1. I want to be able to come back whenever I want and still have a good time and the game evovle. Maybe have new questions added now and then.
+ 1. I want to be able to come back whenever I want and still have a good time and the game evolve. Maybe have new questions added now and then.
 
  # The scope
 
@@ -65,9 +65,45 @@ The user is incredibly simple and intutive, everything is clearly labeled and it
 ### Other:
 -[Google Dev Tools](https://developer.chrome.com/docs/devtools/) Google Chrome Dev Tools was a huge help in discovering bugs and figuring out the solution before actually
 commiting it to my own code.
--[Code Institute](https://codeinstitute.net/) The Code Institute is where all my current coding knowledge has come from.#
--
+-[Code Institute](https://codeinstitute.net/) The Code Institute is where all my current coding knowledge has come from.
 
+
+# Testing and Bugs
+
+## Testing user stories
+
+## New User Stories
+
+### I want to know exactly what i am doing and where i going the moment i get to the site.
+- When you first enter the page you will be greeted by the splash screen with the logo and bright orange play button. Keeps it is simple and intuitive as possible for the user. They will also see more orange buttons as they through the page ahead.
+
+### I want to be able to play a competent game with little to now bugs or fuss
+- Once the user clicks the play button makes thier way into the main game page they can view the rules who if they are really eager they can jump right into it and play with zero bugs with the game itself. 
+
+### I want feedback from the quiz itself, so i know weather i have a question right or wrong!
+- When the user gets a question wrong they will get visual feedback in the way of a green box for correct and a red box for wrong. Now the this is not very accessible for people who are hard of seeing so this is something that should and will be addressed in the future to have not only a visual cue not an audio one too, but for the most part you will know when you have get it right or wrong.
+
+## Regular user stories
+
+### I want to be able to come back whenever I want and still have a good time and the game evolve. Maybe have new questions added now and then.
+- Now the user can keep coming back to the site and continue they're knowledge, as more and more questions get added to the game. What would make this a better experience I think would be the inclusion of an API that can pull down a tonne of questions. Thats to say you can't keep coming back now as new questions will be added manually along as new features to look forward too.
+
+## Device Testing
+- I have tested on the following devices
+
+- Google Pixel 4XL
+- Moto G 5G Plus
+- Samsung Galaxy A21
+- Samsung Galaxy A12
+- Moto E Macro
+- Lenovo Tab P11
+- Amazon Fire Tablet 10"
+- iPhone 12 Pro
+- iPhone 11 Pro
+- Google Chromebook
+- Windows 10 PC - 1920x1080 + 3840x2160
+
+No reported issues on any of these devices
 
 
 
