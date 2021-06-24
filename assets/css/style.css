@@ -28,7 +28,7 @@ h4 {
 }
 
 #hero-img {
-  background: url(/assets/images/Hero-image.jpg) center center / cover no-repeat;
+  background: url(../images/Hero-image.jpg) center center / cover no-repeat;
   height: 100%;
   width: 100%;
   position: fixed;
@@ -48,7 +48,7 @@ h4 {
 }
 
 #company-logo {
-  background: url(/assets/images/Company\ Logo.png) no-repeat center center;
+  background: url(../images/Company\ Logo.png) no-repeat center center;
   background-size: 256px 256px;
   width: 256px;
   height: 256px;

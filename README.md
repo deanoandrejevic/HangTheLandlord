@@ -67,6 +67,7 @@ The user is incredibly simple and intutive, everything is clearly labeled and it
 ### Other:
 -[Google Dev Tools](https://developer.chrome.com/docs/devtools/) Google Chrome Dev Tools was a huge help in discovering bugs and figuring out the solution before actually
 commiting it to my own code.
+
 -[Code Institute](https://codeinstitute.net/) The Code Institute is where all my current coding knowledge has come from.
 
 
