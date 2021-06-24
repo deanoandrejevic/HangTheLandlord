@@ -1,7 +1,8 @@
 # HangTheLandlord
 
-
 Hang the Landlord was initially meant to be a hangman style game but evolved in a multip answer quiz
+
+![Image of live website on multiple devices](/assets/images/AmIResponsive.jpg)
 
 # User Experience (UX)
 
