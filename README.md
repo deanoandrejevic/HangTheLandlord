@@ -133,6 +133,9 @@ commiting it to my own code.
 
 No reported issues on any of these devices
 
+## Lighthouse Test
+-[Lighthouse](assets/images/Lighthouse.jpg)
+
 ## Bugs
 - The only known bug is that after losing the game and tapping start game the color red would stay as the background color instead of disapearing.
 *UPDATE FIXED*
