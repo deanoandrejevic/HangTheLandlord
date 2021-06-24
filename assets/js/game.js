@@ -5,25 +5,27 @@ let answerText = Array.from(document.getElementsByClassName("answer-text"));
 
 // function to toggle between showing rules and hiding rules
 
-document.getElementById("rules-button").addEventListener("click", function showRules(event) {
-  var ruleDiv = document.getElementById("game-rules");
-  var gameDiv = document.getElementById("game-layout");
+document
+  .getElementById("rules-button")
+  .addEventListener("click", function showRules(event) {
+    var ruleDiv = document.getElementById("game-rules");
+    var gameDiv = document.getElementById("game-layout");
 
-  if (ruleDiv.style.display == "none") {
-    ruleDiv.style.display = "block";
-    gameDiv.style.display = "none";
-  } else {
-    ruleDiv.style.display = "none";
-    gameDiv.style.display = "block";
-  }
-});
+    if (ruleDiv.style.display == "none") {
+      ruleDiv.style.display = "block";
+      gameDiv.style.display = "none";
+    } else {
+      ruleDiv.style.display = "none";
+      gameDiv.style.display = "block";
+    }
+  });
 
 // Varibles to be used throughout
 
 let userScore = 0;
-let currentQuestion ={};
+let currentQuestion = {};
 let questionNumber = 0;
-let avalibleQuestions = []
+let avalibleQuestions = [];
 let acceptingAnswers = false;
 
 const maxQuestions = 20;
@@ -223,101 +225,98 @@ let questions = [
     correctAnswer: 1,
   },
   {
-  question: '',
-  choice1: '',
-  choice2: '',
-  choice3: '',
-  choice4: '',
-  correctAnswer: '',
+    question: "In what year did Elvis Presley die?",
+    choice1: "1977",
+    choice2: "1978",
+    choice3: "1976",
+    choice4: "1974",
+    correctAnswer: "1",
   },
   {
-  question: '',
-  choice1: '',
-  choice2: '',
-  choice3: '',
-  choice4: '',
-  correctAnswer: '',
+    question: "Reginald Kenneth Dwight is better known by what name?",
+    choice1: "Eminem",
+    choice2: "Boy George",
+    choice3: "Elton John",
+    choice4: "George Michael",
+    correctAnswer: "3",
   },
   {
-  question: '',
-  choice1: '',
-  choice2: '',
-  choice3: '',
-  choice4: '',
-  correctAnswer: '',
+    question: "Rihanna hit Umbrella was originally written with which other popstar in mind?",
+    choice1: "Mariah Carey",
+    choice2: "J-Lo",
+    choice3: "Christina Aguilera",
+    choice4: "Britney Spears",
+    correctAnswer: "4",
   },
   {
-  question: '',
-  choice1: '',
-  choice2: '',
-  choice3: '',
-  choice4: '',
-  correctAnswer: '',
+    question: "How many members are there in South Korean mega boyband BTS?",
+    choice1: "6",
+    choice2: "7",
+    choice3: "8",
+    choice4: "5",
+    correctAnswer: "2",
   },
   {
-  question: '',
-  choice1: '',
-  choice2: '',
-  choice3: '',
-  choice4: '',
-  correctAnswer: '',
+    question: "Which artist headlined Friday night on the Pyramid Stage at Glastonbury Festival 2019?",
+    choice1: "Stormzy",
+    choice2: "J-Cole",
+    choice3: "DaBaby",
+    choice4: "Jay-Z",
+    correctAnswer: "1",
   },
   {
-  question: '',
-  choice1: '',
-  choice2: '',
-  choice3: '',
-  choice4: '',
-  correctAnswer: '',
+    question: "What year did Kings of Leon release their chart-topper Sex on Fire?",
+    choice1: "2007",
+    choice2: "2009",
+    choice3: "2010",
+    choice4: "2008",
+    correctAnswer: "4",
   },
   {
-  question: '',
-  choice1: '',
-  choice2: '',
-  choice3: '',
-  choice4: '',
-  correctAnswer: '',
+    question: "M.Shadows is the lead singer of which band?",
+    choice1: "Five Finger Death Punch",
+    choice2: "Avenged Sevenfold",
+    choice3: "Bullet For My Valentine",
+    choice4: "A Day To Remember",
+    correctAnswer: "2",
   },
 ];
 
 // function for starting the game
 
-document.getElementById("start-button").addEventListener("click", function startGame() {
-  questionNumber = 0;
-  avalibleQuestions = [...questions]
-  userScore = 0;
-  displayQuestion();
-});
-
-
+document
+  .getElementById("start-button")
+  .addEventListener("click", function startGame() {
+    questionNumber = 0;
+    avalibleQuestions = [...questions];
+    userScore = 0;
+    displayQuestion();
+  });
 
 // Select Random Question and display
 
 function displayQuestion() {
-
-if (questionNumber >= maxQuestions){
-  return endGame()
-}
+  if (questionNumber >= maxQuestions) {
+    return endGame();
+  }
 
   questionNumber++;
 
   const randomQuestion = Math.floor(Math.random() * avalibleQuestions.length);
-  
 
-  currentQuestion = avalibleQuestions[randomQuestion]
-    questionsText.innerHTML = currentQuestion.question;
-  
+  currentQuestion = avalibleQuestions[randomQuestion];
+  questionsText.innerHTML = currentQuestion.question;
 
   answerText.forEach((choice) => {
-    const number = choice.dataset["number"]
-      choice.innerHTML = currentQuestion["choice" + number];
+    const number = choice.dataset["number"];
+    choice.innerHTML = currentQuestion["choice" + number];
   });
- 
-  avalibleQuestions.splice(randomQuestion, 1)
-  acceptingAnswers = true;
-};
 
-// check answers with an assigned data set 
+  avalibleQuestions.splice(randomQuestion, 1);
+  acceptingAnswers = true;
+}
+
+// check answers with an assigned data set
 
 answerText.forEach((choice) => {
   choice.addEventListener("click", (e) => {
@@ -330,32 +329,28 @@ answerText.forEach((choice) => {
     let classToApply = "incorrect-answer";
 
     if (selectedAnswer == currentQuestion.correctAnswer) {
-      classToApply = "correct-answer"
-      selectedChoice.parentElement.classList.add(classToApply)
+      classToApply = "correct-answer";
+      selectedChoice.parentElement.classList.add(classToApply);
       setTimeout(() => {
-        selectedChoice.parentElement.classList.remove(classToApply)
-        displayQuestion()
-      }, 1000)
-      userScore++
+        selectedChoice.parentElement.classList.remove(classToApply);
+        displayQuestion();
+      }, 1000);
+      userScore++;
     } else {
-      classToApply = "incorrect-answer"
-      selectedChoice.parentElement.classList.add(classToApply)
+      classToApply = "incorrect-answer";
+      selectedChoice.parentElement.classList.add(classToApply);
       setTimeout(() => {
-        selectedChoice.parentElement.classList.remove(classToApply)
-        endGame()
-      }, 1000)
+        selectedChoice.parentElement.classList.remove(classToApply);
+        endGame();
+      }, 1000);
     }
-
-     
   });
 });
 
 function endGame() {
-
-if (userScore == 20){
-  questionsText.innerHTML = `Wow! You really are a music god! Well Done`
-} else {
-  questionsText.innerHTML = `Awwww unlucky, you lost! Your score is ${userScore}`;
-  
-}
+  if (userScore == 20) {
+    questionsText.innerHTML = `Wow! You really are a music god! Well Done`;
+  } else {
+    questionsText.innerHTML = `Awwww unlucky, you lost! Your score is ${userScore}`;
+  }
 }
