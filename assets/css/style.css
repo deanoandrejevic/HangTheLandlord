@@ -27,8 +27,8 @@ h4 {
   height: 100vh;
 }
 
-#hero-gif {
-  background: url(/assets/images/Hero-image.jpg) center center / cover no-repeat;
+#hero-img {
+  background: url(assets/images/Hero-image.jpg) center center / cover no-repeat;
   height: 100%;
   width: 100%;
   position: fixed;
@@ -48,7 +48,7 @@ h4 {
 }
 
 #company-logo {
-  background: url(/assets/images/Company\ Logo.png) no-repeat center center;
+  background: url(assets/images/Company\ Logo.png) no-repeat center center;
   background-size: 256px 256px;
   width: 256px;
   height: 256px;
@@ -113,6 +113,16 @@ h4 {
   position: relative;
 }
 
+#start-button {
+  color: white;
+  float: right;
+  padding: 20px 30px;
+  margin-top: 70px;
+  margin-right: 10px;
+  background-color: green;
+}
+
+
 /* Game layout, some of these lines will be called by JS which I will label */
 
 
@@ -154,15 +164,6 @@ h4 {
 .incorrect-answer {
   background-color: red;
 }
-
-#start-button {
-  color: white;
-  height: 50px;
-  width: 100px;
-  background-color: #ff9900;
-  margin-left: 48%;
-}
-
 .row {
   width: 100%
 }
@@ -170,7 +171,8 @@ h4 {
 /* This set of CSS is called on by Javascript */
 
 #game-rules {
-  margin: 0 400px;
+  width: 66%;
+  margin: 10px auto;
   height: 750px;
   text-align: center;
   color: white;
@@ -212,9 +214,17 @@ h4 {
  }
 
  #rules-button {
-   margin-right: 44%;
+   margin-right: 5%;
  }
+
+#start-button {
+  margin-left: 5%;
+}
 .main-game-container {
   height: 1500px;
+}
+
+#game-rules {
+  width: 90%;
 }
 }
