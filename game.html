@@ -32,7 +32,7 @@
         </div>
         <div class="col">
           <!-- Button will display rules through a JS function and swipe in to cover entire screen -->
-          <button onclick="showRules(event)" id="rules-button">Rules!</button>
+          <button id="rules-button">Rules!</button>
         </div>
       </div>
       <!-- This div is called by the Onclick on line 36. the HTML content is in the JS Function called showRules -->
@@ -74,26 +74,22 @@
           <h2 id="question-text"></h2>
         </div>
         <div class="row">
-          <div style="margin-left: 410px" class="col answer-box">
+          <div style="margin-left: 410px" class="col col-sm-12 answer-box">
             <p data-number=1 class="answer-text"></p>
           </div>
-          <div  class="col answer-box">
+          <div  class="col col-sm-12 answer-box">
             <p data-number=2 class="answer-text"></p>
           </div>
         </div>
         <div class="row">
-          <div  style="margin-left: 410px" class="col answer-box">
+          <div  style="margin-left: 410px" class="col col-sm-12 answer-box">
             <p data-number=3 class="answer-text"></p>
           </div>
-          <div  class="col answer-box">
+          <div  class="col col-sm-12 answer-box">
             <p data-number=4 class="answer-text"></p>
           </div>
         </div>
         <div class="row">
-          <div class="col">
-            <!-- This button has an click which will display a hint as an alert -->
-            <button id="hint-button" onclick="function showHint()">Hint</button>
-          </div>
           <div class="col">
             <!-- This button will start the game as well as end the game -->
             <button id="start-button">

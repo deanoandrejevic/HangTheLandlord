@@ -5,7 +5,7 @@ let answerText = Array.from(document.getElementsByClassName("answer-text"));
 
 // function to toggle between showing rules and hiding rules
 
-function showRules(event) {
+document.getElementById("rules-button").addEventListener("click", function showRules(event) {
   var ruleDiv = document.getElementById("game-rules");
   var gameDiv = document.getElementById("game-layout");
 
@@ -16,26 +16,20 @@ function showRules(event) {
     ruleDiv.style.display = "none";
     gameDiv.style.display = "block";
   }
-}
+});
 
 // Varibles to be used throughout
 
 let userScore = 0;
-let currentQuestionOne = {};
-let currentQuestionTwo = {};
-let currentQuestionThree = {};
-let currentQuestionFour = {};
+let currentQuestion ={};
 let questionNumber = 0;
-let avalibleQuestions1 = [];
-let avalibleQuestions2 = [];
-let avalibleQuestions3 = [];
-let avalibleQuestions4 = [];
+let avalibleQuestions = []
 let acceptingAnswers = false;
 
 const maxQuestions = 20;
 
 // Questions for the quiz
-let questionsLvl1 = [
+let questions = [
   {
     question:
       "What former disney channel star recently released the song Good 4 U?",
@@ -131,8 +125,7 @@ let questionsLvl1 = [
     choice4: "Florida",
     correctAnswer: 1,
   },
-];
-let questionsLvl2 = [
+
   {
     question:
       "The song Free Bird was performed by which Florida based music group",
@@ -184,9 +177,7 @@ let questionsLvl2 = [
     choice4: "Joey Ramone",
     correctAnswer: 3,
   },
-];
 
-let questionsLvl3 = [
   {
     question:
       "The song Land of Confusion was on the Genesis record 'Invisible Touch', but which metal group covered the song in 2005",
@@ -204,8 +195,7 @@ let questionsLvl3 = [
     choice4: "Asics",
     correctAnswer: 2,
   },
-];
-let questionsLvl4 = [
+
   {
     question:
       "The song 'I Don't Want To Set The World On Fire' was written in 1938, but which artists rendition of the song has become synonmus with the popular gaming franchise, Fallout",
@@ -236,15 +226,12 @@ let questionsLvl4 = [
 
 // function for starting the game
 
-function startGame() {
+document.getElementById("start-button").addEventListener("click", function startGame() {
   questionNumber = 0;
-  avalibleQuestions1 = [...questionsLvl1];
-  avalibleQuestions2 = [...questionsLvl2];
-  avalibleQuestions3 = [...questionsLvl3];
-  avalibleQuestions4 = [...questionsLvl4];
+  avalibleQuestions = [...questions]
   userScore = 0;
   displayQuestion();
-}
+});
 
 // check answers
 
@@ -252,45 +239,25 @@ function startGame() {
 
 function displayQuestion() {
 
+if (questionNumber >= maxQuestions){
+  endGame()
+}
+
   questionNumber++;
 
-  const lvlOne = Math.floor(Math.random() * questionsLvl1.length);
-  const lvlTwo = Math.floor(Math.random() * questionsLvl2.length);
-  const lvlThree = Math.floor(Math.random() * questionsLvl3.length);
-  const lvlFour = Math.floor(Math.random() * questionsLvl4.length);
+  const randomQuestion = Math.floor(Math.random() * avalibleQuestions.length);
+  
 
-  currentQuestionOne = avalibleQuestions1[lvlOne];
-  currentQuestionTwo = avalibleQuestions2[lvlTwo];
-  currentQuestionThree = avalibleQuestions3[lvlThree];
-  currentQuestionFour = avalibleQuestions4[lvlFour];
-
-  if (questionNumber >= 1) {
-    questionsText.innerHTML = currentQuestionOne.question;
-  } else if (questionNumber >= 5) {
-    questionsText.innerHTML = currentQuestionTwo.question;
-  } else if (questionNumber >= 10) {
-    questionsText.innerHTML = currentQuestionThree.question;
-  } else if (questionNumber >= 15) {
-    questionsText.innerHTML = currentQuestionFour.question;
-  }
+  currentQuestion = avalibleQuestions[randomQuestion]
+    questionsText.innerHTML = currentQuestion.question;
+  
 
   answerText.forEach((choice) => {
-    const number = choice.dataset["number"];
-    if (questionNumber >= 1) {
-      choice.innerHTML = currentQuestionOne["choice" + number];
-    } else if (questionNumber >= 5) {
-      choice.innerHTML = currentQuestionTwo["choice" + number];
-    } else if (questionNumber >= 10) {
-      choice.innerHTML = currentQuestionThree["choice" + number];
-    } else if (questionNumber >= 15) {
-      choice.innerHTML = currentQuestionFour["choice" + number];
-    }
+    const number = choice.dataset["number"]
+      choice.innerHTML = currentQuestion["choice" + number];
   });
-
-  avalibleQuestions1.splice(lvlOne, 1);
-  avalibleQuestions2.splice(lvlTwo, 1);
-  avalibleQuestions3.splice(lvlThree, 1);
-  avalibleQuestions4.splice(lvlFour, 1);
+ 
+  avalibleQuestions.splice(randomQuestion, 1)
   acceptingAnswers = true;
 };
 
@@ -304,57 +271,33 @@ answerText.forEach((choice) => {
 
     let classToApply = "incorrect-answer";
 
-    if (selectedAnswer == currentQuestionOne.correctAnswer) {
-      classToApply = "correct-answer";
-      selectedChoice.parentElement.classList.add(classToApply);
+    if (selectedAnswer == currentQuestion.correctAnswer) {
+      classToApply = "correct-answer"
+      selectedChoice.parentElement.classList.add(classToApply)
       setTimeout(() => {
-        selectedChoice.parentElement.classList.remove(classToApply);
-        displayQuestion();
-      }, 1000);
-      userScore++;
-    } else if (selectedAnswer == currentQuestionTwo.correctAnswer) {
-      classToApply = "correct-answer";
-      selectedChoice.parentElement.classList.add(classToApply);
-      setTimeout(() => {
-        selectedChoice.parentElement.classList.remove(classToApply);
-        displayQuestion();
-      }, 1000);
-      userScore++;
-    } else if (selectedAnswer == currentQuestionThree.correctAnswer) {
-      classToApply = "correct-answer";
-      selectedChoice.parentElement.classList.add(classToApply);
-      setTimeout(() => {
-        selectedChoice.parentElement.classList.remove(classToApply);
-        displayQuestion();
-      }, 1000);
-      userScore++;
-    } else if (selectedAnswer == currentQuestionFour.correctAnswer) {
-      classToApply = "correct-answer";
-      selectedChoice.parentElement.classList.add(classToApply);
-      setTimeout(() => {
-        selectedChoice.parentElement.classList.remove(classToApply);
-        displayQuestion();
-      }, 1000);
-      userScore++;
+        selectedChoice.parentElement.classList.remove(classToApply)
+        displayQuestion()
+      }, 1000)
+      userScore++
     } else {
-      classToApply = "incorrect-answer";
-      selectedChoice.parentElement.classList.add(classToApply);
-      endGame();
+      classToApply = "incorrect-answer"
+      selectedChoice.parentElement.classList.add(classToApply)
+      setTimeout(() => {
+        selectedChoice.parentElement.classList.remove(classToApply)
+        endGame()
+      }, 1000)
     }
 
-    // if (selectedAnswer !== currentQuestionOne.correctAnswer) {
-    //   endGame();
-    // }
-
-    console.log(userScore);
-    console.log(classToApply);
+     
   });
 });
 
 function endGame() {
-  questionsText.innerHTML = `You lose! Your score is ${userScore}`;
+if (userScore == 20){
+  questionsText.innerHTML = `Wow! You really are a music god! Well Done`
+} else {
+  questionsText.innerHTML = `Awwww unlucky, you lost! Your score is ${userScore}`;
+}
 }
 
 startGame();
-
-console.log(questionNumber)
