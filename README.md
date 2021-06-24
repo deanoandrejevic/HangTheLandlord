@@ -73,6 +73,30 @@ commiting it to my own code.
 
 # Testing and Bugs
 
+## Testing functions
+
+### showRules
+- The show rules function does exactly what it is says on the tin! It shows the rules through an event listener and closes again once the rules button has been pressed.
+
+### DisplayQuestions
+- This function displays the questions, it was a bit of a faff to get it to work as intended but it loops through the questions array and and randomizes them. It then draws the questions it has chosen and brings out the answers to be displayed on screen for the user.
+
+### startGame
+- This function once again is pretty self explainatory. It starts the game, but it does reset the UserScore and QuestionNumber so that it is starting clean everytime.
+
+## Playing the game
+- starting the game works as intended, all you have to do is press the start button it generates the first questions lets you pick your answers
+
+- selecting the correct answer turns the answer box green and the there is 1 second delay to then generate the next question and clear the green background.
+
+- selecting the wrong answer turns the answer box red for 1 second and then runs the function end game. the end game functions does two different things depending on your score but in this case it displays a message in the question box which reads ,Awwww unlucky, you lost! Your score is ${userScore}, and as you can see at the end it grabs your score and displays it
+
+- clicking through all the right questions will increment the question number. Once that question reaches 20 the game ends and you have a score of 20, which will then display the other part of the end game function which is, Wow! You really are a music god! Well Done, 
+
+- Once the game has run that end game function the only way of then restarting the game is to press start game again.
+
+- you can also access the rules by pressing the rules button
+
 ## Testing user stories
 
 ## New User Stories
