@@ -29,6 +29,8 @@ The user is incredibly simple and intutive, everything is clearly labeled and it
 
  # Wireframes
 
+[Splash](/assets/images/Splash-screen-wireframe.png) Screen
+[Main](/assets/images/main-game-wireframe.png) Game
 
  # Features
 
